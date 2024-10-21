@@ -1,0 +1,109 @@
+# Ignore build artifacts and intermediate files
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.i
+*.ii
+*.s
+*.su
+*.mod
+*.d
+*.gcno
+*.gcda
+*.gcov
+
+# Ignore compiler-generated files
+*.idb
+*.pdb
+*.ilk
+
+# Ignore debug/release directories (if applicable)
+Debug/
+debug/
+Release/
+release/
+build/
+Build/
+bin/
+Bin/
+
+# Ignore make and cmake files
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+install_manifest.txt
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.code-workspace
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.xcworkspace
+*.xcodeproj/
+*.xcuserdata/
+*.DS_Store
+
+# Ignore auto-generated files by editors
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore logs and other output
+*.log
+*.dat
+*.csv
+*.tmp
+*.pid
+
+# Ignore coverage files (gcov, lcov)
+*.gcov
+*.lcov
+
+# Ignore backup files and caches
+*.stackdump
+*.core
+.cache/
+
+# Ignore CLion, JetBrains IDEs specific files
+.idea/
+cmake-build-*/
+
+# Ignore clangd indexing and other IDE-related files
+.clangd/
+compile_commands.json
+
+# Ignore temporary files from editors
+*.~* 
+*.swp
+
+# Ignore test executables
+test/
+
+# Ignore object dumps
+*.dSYM/
+*.objdump
+*.dmp
+
+# Ignore any archives or compressed files
+*.tar.gz
+*.tar.bz2
+*.zip
+*.7z
+*.rar
