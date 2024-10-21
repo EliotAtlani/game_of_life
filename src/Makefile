@@ -2,7 +2,7 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -std=c++17 -Wall
+CXXFLAGS = -std=c++17 -Wall -g  # Added -g for debugging, you can remove it if not needed
 
 # Paths to raylib's include and lib directories (replace with the output of brew --prefix raylib if different)
 INCLUDES = -I/opt/homebrew/opt/raylib/include
@@ -14,6 +14,9 @@ LIBS = -lraylib -framework OpenGL -framework Cocoa -framework IOKit
 # Source files
 SRCS = main.cpp grid.cpp simulation.cpp
 
+# Object files (replace .cpp with .o)
+OBJS = $(SRCS:.cpp=.o)
+
 # Output executable name
 TARGET = game
 
@@ -21,12 +24,16 @@ TARGET = game
 all: $(TARGET)
 
 # Rule to link and generate the output executable
-$(TARGET): $(SRCS)
-	$(CXX) $(CXXFLAGS) $(SRCS) $(INCLUDES) $(LDFLAGS) $(LIBS) -o $(TARGET)
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) $(INCLUDES) $(LDFLAGS) $(LIBS) -o $(TARGET)
+
+# Rule to compile individual source files into object files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 # Clean target to remove the compiled files
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) $(OBJS)
 
-# Phony targets
+# Phony targets to avoid conflicts with files named 'all' or 'clean'
 .PHONY: all clean

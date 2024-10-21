@@ -2,7 +2,7 @@
 
 Game of life coded in C++ (using raylib) and Object-Oriented Programming
 
-![Project Screensjot](/game_of_life.png)
+![Project Screensjot](/game_of_life.gif)
 
 ### Installation
 
